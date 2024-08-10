@@ -7,6 +7,6 @@ enum class TranslateError {
     UNKNOWN_ERROR
 }
 
-class TransactionException(val error: TranslateError) : Exception(
-    message = "An error occur when translate $error"
+class TransactionException(error: TranslateError) : RuntimeException(
+    "An error occur when translate $error"
 )
