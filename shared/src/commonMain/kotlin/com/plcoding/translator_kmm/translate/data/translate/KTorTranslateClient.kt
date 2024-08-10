@@ -2,9 +2,9 @@ package com.plcoding.translator_kmm.translate.data.translate
 
 import com.plcoding.translator_kmm.NetworkConstants
 import com.plcoding.translator_kmm.core.domain.langauge.Language
-import com.plcoding.translator_kmm.translate.domain.translate.TransactionException
 import com.plcoding.translator_kmm.translate.domain.translate.TranslateClient
 import com.plcoding.translator_kmm.translate.domain.translate.TranslateError
+import com.plcoding.translator_kmm.translate.domain.translate.TranslateException
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.post
@@ -34,21 +34,21 @@ class KTorTranslateClient(
                 )
             }
         } catch (e: IOException) {
-            throw TransactionException(TranslateError.SERVICE_UNAVAILABLE)
+            throw TranslateException(TranslateError.SERVICE_UNAVAILABLE)
         }
 
         when (result.status.value) {
             in 200..299 -> Unit
-            500 -> throw TransactionException(TranslateError.SERVER_ERROR)
+            500 -> throw TranslateException(TranslateError.SERVER_ERROR)
 
-            in 400..499 -> throw TransactionException(TranslateError.CLIENT_ERROR)
-            else -> throw TransactionException(TranslateError.UNKNOWN_ERROR)
+            in 400..499 -> throw TranslateException(TranslateError.CLIENT_ERROR)
+            else -> throw TranslateException(TranslateError.UNKNOWN_ERROR)
         }
 
         return try {
             result.body<TranslatedDto>().translatedText
         } catch (e: Exception) {
-            throw TransactionException(TranslateError.SERVER_ERROR)
+            throw TranslateException(TranslateError.SERVER_ERROR)
         }
     }
 }

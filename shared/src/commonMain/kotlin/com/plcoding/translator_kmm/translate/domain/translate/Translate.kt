@@ -26,7 +26,7 @@ class Translate(
                 )
             )
             Resource.Success(translatedText)
-        } catch (e: TransactionException) {
+        } catch (e: TranslateException) {
             e.printStackTrace()
             Resource.Error(e)
         }
