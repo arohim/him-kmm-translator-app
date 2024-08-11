@@ -162,7 +162,7 @@ class TranslateViewModel(
     }
 
     fun translate(state: TranslateState) {
-        if (state.toText.isNullOrEmpty() || state.fromText.isEmpty()) {
+        if (state.isTranslating || state.fromText.isEmpty()) {
             return
         }
         viewModelScope.launch {

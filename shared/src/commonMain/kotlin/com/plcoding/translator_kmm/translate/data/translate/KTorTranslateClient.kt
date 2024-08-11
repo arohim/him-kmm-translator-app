@@ -7,8 +7,10 @@ import com.plcoding.translator_kmm.translate.domain.translate.TranslateError
 import com.plcoding.translator_kmm.translate.domain.translate.TranslateException
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
+import io.ktor.client.plugins.timeout
 import io.ktor.client.request.post
 import io.ktor.client.request.setBody
+import io.ktor.client.request.url
 import io.ktor.http.ContentType
 import io.ktor.http.contentType
 import io.ktor.utils.io.errors.IOException
@@ -23,7 +25,11 @@ class KTorTranslateClient(
     ): String {
         val result = try {
             httpClient.post {
-                NetworkConstants.BASE_URL + "/translate"
+                url(NetworkConstants.BASE_URL + "/translate")
+                timeout {
+                    connectTimeoutMillis = 10000
+                    requestTimeoutMillis = 10000
+                }
                 contentType(ContentType.Application.Json)
                 setBody(
                     TranslateDto(
@@ -34,6 +40,7 @@ class KTorTranslateClient(
                 )
             }
         } catch (e: IOException) {
+            e.printStackTrace()
             throw TranslateException(TranslateError.SERVICE_UNAVAILABLE)
         }
 

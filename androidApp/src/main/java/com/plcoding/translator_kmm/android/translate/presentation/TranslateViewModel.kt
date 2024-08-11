@@ -1,4 +1,4 @@
-package com.plcoding.translator_kmm.android.presentation
+package com.plcoding.translator_kmm.android.translate.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
