@@ -18,6 +18,10 @@
 		E40C671A2C6CFF9700157857 /* SwapLanguageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40C67192C6CFF9700157857 /* SwapLanguageButton.swift */; };
 		E40C671C2C6D068300157857 /* IOSTranslateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40C671B2C6D068300157857 /* IOSTranslateViewModel.swift */; };
 		E40C67202C6D06C700157857 /* TranslateScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40C671F2C6D06C700157857 /* TranslateScreen.swift */; };
+		E4826E072C705BC1003F54D2 /* TranslateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4826E062C705BC1003F54D2 /* TranslateTextField.swift */; };
+		E4826E092C705BC8003F54D2 /* LanguageDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4826E082C705BC8003F54D2 /* LanguageDisplay.swift */; };
+		E4826E0B2C705BCE003F54D2 /* ProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4826E0A2C705BCE003F54D2 /* ProgressButton.swift */; };
+		E4826E0D2C705BEA003F54D2 /* GradientSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4826E0C2C705BEA003F54D2 /* GradientSurface.swift */; };
 		E4E025152C6BAF5D00678519 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E025142C6BAF5D00678519 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +41,10 @@
 		E40C67192C6CFF9700157857 /* SwapLanguageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapLanguageButton.swift; sourceTree = "<group>"; };
 		E40C671B2C6D068300157857 /* IOSTranslateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTranslateViewModel.swift; sourceTree = "<group>"; };
 		E40C671F2C6D06C700157857 /* TranslateScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateScreen.swift; sourceTree = "<group>"; };
+		E4826E062C705BC1003F54D2 /* TranslateTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslateTextField.swift; sourceTree = "<group>"; };
+		E4826E082C705BC8003F54D2 /* LanguageDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageDisplay.swift; sourceTree = "<group>"; };
+		E4826E0A2C705BCE003F54D2 /* ProgressButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressButton.swift; sourceTree = "<group>"; };
+		E4826E0C2C705BEA003F54D2 /* GradientSurface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientSurface.swift; sourceTree = "<group>"; };
 		E4E025142C6BAF5D00678519 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +130,9 @@
 		E40C67122C6CF9E300157857 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				E4826E0A2C705BCE003F54D2 /* ProgressButton.swift */,
+				E4826E082C705BC8003F54D2 /* LanguageDisplay.swift */,
+				E4826E062C705BC1003F54D2 /* TranslateTextField.swift */,
 				E40C67132C6CFA1200157857 /* LanguageDropDownItem.swift */,
 				E40C67152C6CFC4A00157857 /* LanguageDropDown.swift */,
 				E40C67172C6CFDE100157857 /* SmallLanguageIcon.swift */,
@@ -141,6 +152,7 @@
 		E4E025132C6BAEEA00678519 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				E4826E0C2C705BEA003F54D2 /* GradientSurface.swift */,
 				E4E025142C6BAF5D00678519 /* Colors.swift */,
 			);
 			path = presentation;
@@ -286,12 +298,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4826E0B2C705BCE003F54D2 /* ProgressButton.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				E40C67142C6CFA1200157857 /* LanguageDropDownItem.swift in Sources */,
 				E40C67182C6CFDE100157857 /* SmallLanguageIcon.swift in Sources */,
+				E4826E092C705BC8003F54D2 /* LanguageDisplay.swift in Sources */,
 				E40C671C2C6D068300157857 /* IOSTranslateViewModel.swift in Sources */,
 				E40C67162C6CFC4A00157857 /* LanguageDropDown.swift in Sources */,
 				E40C671A2C6CFF9700157857 /* SwapLanguageButton.swift in Sources */,
+				E4826E072C705BC1003F54D2 /* TranslateTextField.swift in Sources */,
+				E4826E0D2C705BEA003F54D2 /* GradientSurface.swift in Sources */,
 				E4E025152C6BAF5D00678519 /* Colors.swift in Sources */,
 				E40C67202C6D06C700157857 /* TranslateScreen.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
