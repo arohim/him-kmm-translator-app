@@ -22,6 +22,8 @@
 		E4826E092C705BC8003F54D2 /* LanguageDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4826E082C705BC8003F54D2 /* LanguageDisplay.swift */; };
 		E4826E0B2C705BCE003F54D2 /* ProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4826E0A2C705BCE003F54D2 /* ProgressButton.swift */; };
 		E4826E0D2C705BEA003F54D2 /* GradientSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4826E0C2C705BEA003F54D2 /* GradientSurface.swift */; };
+		E48C6B352C705F98000DC1DC /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48C6B342C705F98000DC1DC /* TextToSpeech.swift */; };
+		E48C6B372C706121000DC1DC /* TranslateHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48C6B362C706121000DC1DC /* TranslateHistoryItem.swift */; };
 		E4E025152C6BAF5D00678519 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E025142C6BAF5D00678519 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		E4826E082C705BC8003F54D2 /* LanguageDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageDisplay.swift; sourceTree = "<group>"; };
 		E4826E0A2C705BCE003F54D2 /* ProgressButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressButton.swift; sourceTree = "<group>"; };
 		E4826E0C2C705BEA003F54D2 /* GradientSurface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientSurface.swift; sourceTree = "<group>"; };
+		E48C6B342C705F98000DC1DC /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
+		E48C6B362C706121000DC1DC /* TranslateHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateHistoryItem.swift; sourceTree = "<group>"; };
 		E4E025142C6BAF5D00678519 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +127,7 @@
 				E40C67122C6CF9E300157857 /* components */,
 				E40C671B2C6D068300157857 /* IOSTranslateViewModel.swift */,
 				E40C671F2C6D06C700157857 /* TranslateScreen.swift */,
+				E48C6B342C705F98000DC1DC /* TextToSpeech.swift */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 				E40C67152C6CFC4A00157857 /* LanguageDropDown.swift */,
 				E40C67172C6CFDE100157857 /* SmallLanguageIcon.swift */,
 				E40C67192C6CFF9700157857 /* SwapLanguageButton.swift */,
+				E48C6B362C706121000DC1DC /* TranslateHistoryItem.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -309,7 +315,9 @@
 				E4826E072C705BC1003F54D2 /* TranslateTextField.swift in Sources */,
 				E4826E0D2C705BEA003F54D2 /* GradientSurface.swift in Sources */,
 				E4E025152C6BAF5D00678519 /* Colors.swift in Sources */,
+				E48C6B352C705F98000DC1DC /* TextToSpeech.swift in Sources */,
 				E40C67202C6D06C700157857 /* TranslateScreen.swift in Sources */,
+				E48C6B372C706121000DC1DC /* TranslateHistoryItem.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

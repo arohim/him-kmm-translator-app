@@ -93,12 +93,15 @@ struct TranslatedTextField: View {
     var toLangauge: UiLanguage
     var onTranslateEvent: (TranslateEvent) -> Void
     
+    private let tts = TextToSpeech()
+    
     
     var body: some View {
         VStack (alignment: .leading, content: {
             LanguageDisplay(langauge: fromLangauge)
             Text(fromText)
                 .foregroundColor(.onSurface)
+                
             HStack {
                 Spacer()
                 Button(action: {
@@ -139,7 +142,10 @@ struct TranslatedTextField: View {
                     
                 })
                 Button(action: {
-                    // TODO: text to speech
+                    tts.speak(
+                        text: toText,
+                        language: toLangauge.language.langCode
+                    )
                 }, label: {
                     Image(systemName: "speaker.wave.2")
                         .foregroundColor(.lightBlue)
