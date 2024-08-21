@@ -40,6 +40,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.app.ActivityCompat.shouldShowRequestPermissionRationale
 import com.plcoding.translator_kmm.android.R
@@ -92,13 +93,13 @@ fun VoiceToTextScreen(
                         }
                     },
                     backgroundColor = MaterialTheme.colors.primary,
-                    contentColor = MaterialTheme.colors.primary,
+                    contentColor = MaterialTheme.colors.onPrimary
                 ) {
                     AnimatedContent(targetState = state.displayState) { displayState ->
                         when (displayState) {
                             DisplayState.Speaking -> {
                                 Icon(
-                                    imageVector = Icons.Rounded.Stop,
+                                    imageVector = Icons.Rounded.Close,
                                     contentDescription = stringResource(id = R.string.record_audio),
                                     modifier = Modifier.size(50.dp)
                                 )
@@ -175,7 +176,7 @@ fun VoiceToTextScreen(
                     when (displayState) {
                         DisplayState.WaitingToTalk -> {
                             Text(
-                                text = stringResource(id = R.string.start_taling),
+                                text = stringResource(id = R.string.start_talking),
                                 style = MaterialTheme.typography.h2,
                                 textAlign = TextAlign.Center
                             )
@@ -211,4 +212,20 @@ fun VoiceToTextScreen(
             }
         }
     }
+}
+
+@Preview
+@Composable
+private fun VoiceToTextScreenPreview() {
+    VoiceToTextScreen(
+        state = VoiceToTextState(
+            powerRatios = (0..100).map { it / 100f },
+            spokenText = "Hello World!",
+            displayState = DisplayState.WaitingToTalk,
+        ),
+        languageCode = "en",
+        onResult = {},
+        onEvent = { _ ->
+        }
+    )
 }

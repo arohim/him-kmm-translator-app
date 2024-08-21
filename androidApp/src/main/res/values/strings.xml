@@ -18,5 +18,5 @@
     <string name="apply">Apply</string>
     <string name="record_again">Record again</string>
     <string name="listening">Listening</string>
-    <string name="start_taling">Start talking</string>
+    <string name="start_talking">Click record and start talking</string>
 </resources>

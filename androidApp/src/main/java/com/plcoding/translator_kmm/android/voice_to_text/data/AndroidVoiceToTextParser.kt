@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
+import android.speech.SpeechRecognizer.ERROR_CLIENT
 import com.plcoding.translator_kmm.android.R
 import com.plcoding.translator_kmm.core.domain.util.CommonStateFlow
 import com.plcoding.translator_kmm.core.domain.util.toCommonStateFlow
@@ -86,8 +87,11 @@ class AndroidVoiceToTextParser(
         _state.update { it.copy(isSpeaking = false) }
     }
 
-    override fun onError(p0: Int) {
-        _state.update { it.copy(error = "Error: $p0") }
+    override fun onError(code: Int) {
+        if (code == ERROR_CLIENT) {
+            return
+        }
+        _state.update { it.copy(error = "Error: $code") }
     }
 
     override fun onResults(p0: Bundle?) {

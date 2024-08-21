@@ -46,7 +46,7 @@ class VoiceToTextViewModel(
     init {
         viewModelScope.launch {
             while (true) {
-                if (state.value.displayState == DisplayState.WaitingToTalk) {
+                if (state.value.displayState == DisplayState.Speaking) {
                     _state.update {
                         it.copy(
                             powerRatios = it.powerRatios + parser.state.value.powerRatio
@@ -75,6 +75,7 @@ class VoiceToTextViewModel(
     }
 
     private fun toggleListening(languageCode: String) {
+        _state.update { it.copy(powerRatios = emptyList()) }
         parser.cancel()
         if (state.value.displayState == DisplayState.Speaking) {
             parser.stopListening()

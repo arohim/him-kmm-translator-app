@@ -133,6 +133,7 @@ fun TranslateRoot() {
                 .collectAsState()
             LaunchedEffect(voiceResult) {
                 viewModel.onEvent(TranslateEvent.SubmitVoiceResult(voiceResult))
+                viewModel.onEvent(TranslateEvent.Translate)
                 it.savedStateHandle["voiceResult"] = null
             }
 
