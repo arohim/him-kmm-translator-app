@@ -1,0 +1,16 @@
+package com.plcoding.translator_kmm.voice_to_text.presentation
+
+data class VoiceToTextState(
+    val powerRatios: List<Float> = emptyList(),
+    val spokenText: String? = null,
+    val canRecord: Boolean = false,
+    val recordError: String? = null,
+    val displayState: DisplayState? = null
+)
+
+enum class DisplayState {
+    WaitingToTalk,
+    Speaking,
+    DisplayingResults,
+    Error
+}
