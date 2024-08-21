@@ -22,9 +22,13 @@ class VoiceToTextViewModel(
     val state = _state.combine(parser.state) { state, voiceResult ->
         state.copy(
             spokenText = voiceResult.result,
-            recordError = voiceResult.error,
+            recordError = if (state.canRecord) {
+                voiceResult.error
+            } else {
+                "Can't record audio without permission"
+            },
             displayState = when {
-                voiceResult.error != null -> DisplayState.Error
+                !state.canRecord || voiceResult.error != null -> DisplayState.Error
                 voiceResult.result?.isNotBlank() == true && !voiceResult.isSpeaking -> {
                     DisplayState.DisplayingResults
                 }
