@@ -27,6 +27,9 @@
 		E48C6B352C705F98000DC1DC /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48C6B342C705F98000DC1DC /* TextToSpeech.swift */; };
 		E48C6B372C706121000DC1DC /* TranslateHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48C6B362C706121000DC1DC /* TranslateHistoryItem.swift */; };
 		E4B95EB42C78DCFE009E7F91 /* IOSVoiceToTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B95EB32C78DCFE009E7F91 /* IOSVoiceToTextViewModel.swift */; };
+		E4B95EB72C78DE79009E7F91 /* VoiceRecorderDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B95EB62C78DE79009E7F91 /* VoiceRecorderDisplay.swift */; };
+		E4B95EB92C78E127009E7F91 /* VoiceRecorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B95EB82C78E127009E7F91 /* VoiceRecorderButton.swift */; };
+		E4B95EBB2C78E6A3009E7F91 /* VoiceToTextScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B95EBA2C78E6A3009E7F91 /* VoiceToTextScreen.swift */; };
 		E4E025152C6BAF5D00678519 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E025142C6BAF5D00678519 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +58,9 @@
 		E48C6B342C705F98000DC1DC /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
 		E48C6B362C706121000DC1DC /* TranslateHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateHistoryItem.swift; sourceTree = "<group>"; };
 		E4B95EB32C78DCFE009E7F91 /* IOSVoiceToTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSVoiceToTextViewModel.swift; sourceTree = "<group>"; };
+		E4B95EB62C78DE79009E7F91 /* VoiceRecorderDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecorderDisplay.swift; sourceTree = "<group>"; };
+		E4B95EB82C78E127009E7F91 /* VoiceRecorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecorderButton.swift; sourceTree = "<group>"; };
+		E4B95EBA2C78E6A3009E7F91 /* VoiceToTextScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceToTextScreen.swift; sourceTree = "<group>"; };
 		E4E025142C6BAF5D00678519 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,9 +181,20 @@
 		E4B95EB22C78DCE9009E7F91 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				E4B95EB52C78DE6E009E7F91 /* component */,
 				E4B95EB32C78DCFE009E7F91 /* IOSVoiceToTextViewModel.swift */,
+				E4B95EBA2C78E6A3009E7F91 /* VoiceToTextScreen.swift */,
 			);
 			path = presentation;
+			sourceTree = "<group>";
+		};
+		E4B95EB52C78DE6E009E7F91 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				E4B95EB62C78DE79009E7F91 /* VoiceRecorderDisplay.swift */,
+				E4B95EB82C78E127009E7F91 /* VoiceRecorderButton.swift */,
+			);
+			path = component;
 			sourceTree = "<group>";
 		};
 		E4E025122C6BAED700678519 /* core */ = {
@@ -337,12 +354,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4B95EB92C78E127009E7F91 /* VoiceRecorderButton.swift in Sources */,
 				E4826E0B2C705BCE003F54D2 /* ProgressButton.swift in Sources */,
+				E4B95EBB2C78E6A3009E7F91 /* VoiceToTextScreen.swift in Sources */,
 				E4B95EB42C78DCFE009E7F91 /* IOSVoiceToTextViewModel.swift in Sources */,
 				E41952492C778838005DB1D0 /* MicrophonePowerObserver.swift in Sources */,
 				E419524B2C778BC1005DB1D0 /* IOSvoiceToTextParser.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				E40C67142C6CFA1200157857 /* LanguageDropDownItem.swift in Sources */,
+				E4B95EB72C78DE79009E7F91 /* VoiceRecorderDisplay.swift in Sources */,
 				E40C67182C6CFDE100157857 /* SmallLanguageIcon.swift in Sources */,
 				E4826E092C705BC8003F54D2 /* LanguageDisplay.swift in Sources */,
 				E40C671C2C6D068300157857 /* IOSTranslateViewModel.swift in Sources */,

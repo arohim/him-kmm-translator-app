@@ -9,8 +9,8 @@ data class VoiceToTextState(
 )
 
 enum class DisplayState {
-    WaitingToTalk,
-    Speaking,
-    DisplayingResults,
-    Error
+    WAITING_TO_TALK,
+    SPEAKING,
+    DISPLAYING_RESULTS,
+    ERROR
 }

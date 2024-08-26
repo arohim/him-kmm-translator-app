@@ -42,6 +42,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Microphone permission is used to determine your voice&apos;s power level</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Need to transcribe audio for your transiation</string>
 	<key>UILaunchScreen</key>
 	<dict/>
 </dict>

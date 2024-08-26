@@ -28,13 +28,13 @@ class VoiceToTextViewModel(
                 "Can't record audio without permission"
             },
             displayState = when {
-                !state.canRecord || voiceResult.error != null -> DisplayState.Error
+                !state.canRecord || voiceResult.error != null -> DisplayState.ERROR
                 voiceResult.result?.isNotBlank() == true && !voiceResult.isSpeaking -> {
-                    DisplayState.DisplayingResults
+                    DisplayState.DISPLAYING_RESULTS
                 }
 
-                voiceResult.isSpeaking -> DisplayState.Speaking
-                else -> DisplayState.WaitingToTalk
+                voiceResult.isSpeaking -> DisplayState.SPEAKING
+                else -> DisplayState.WAITING_TO_TALK
             }
         )
     }.stateIn(
@@ -46,7 +46,7 @@ class VoiceToTextViewModel(
     init {
         viewModelScope.launch {
             while (true) {
-                if (state.value.displayState == DisplayState.Speaking) {
+                if (state.value.displayState == DisplayState.SPEAKING) {
                     _state.update {
                         it.copy(
                             powerRatios = it.powerRatios + parser.state.value.powerRatio
@@ -77,7 +77,7 @@ class VoiceToTextViewModel(
     private fun toggleListening(languageCode: String) {
         _state.update { it.copy(powerRatios = emptyList()) }
         parser.cancel()
-        if (state.value.displayState == DisplayState.Speaking) {
+        if (state.value.displayState == DisplayState.SPEAKING) {
             parser.stopListening()
         } else {
             parser.startListening(languageCode)

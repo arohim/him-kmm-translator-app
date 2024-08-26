@@ -30,7 +30,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Check
 import androidx.compose.material.icons.rounded.Close
 import androidx.compose.material.icons.rounded.Refresh
-import androidx.compose.material.icons.rounded.Stop
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
@@ -86,7 +85,7 @@ fun VoiceToTextScreen(
                     modifier = Modifier
                         .size(75.dp),
                     onClick = {
-                        if (state.displayState != DisplayState.DisplayingResults) {
+                        if (state.displayState != DisplayState.DISPLAYING_RESULTS) {
                             onEvent(VoiceToTextEvent.ToggleRecording(languageCode))
                         } else {
                             onResult(state.spokenText ?: "")
@@ -97,7 +96,7 @@ fun VoiceToTextScreen(
                 ) {
                     AnimatedContent(targetState = state.displayState) { displayState ->
                         when (displayState) {
-                            DisplayState.Speaking -> {
+                            DisplayState.SPEAKING -> {
                                 Icon(
                                     imageVector = Icons.Rounded.Close,
                                     contentDescription = stringResource(id = R.string.record_audio),
@@ -105,7 +104,7 @@ fun VoiceToTextScreen(
                                 )
                             }
 
-                            DisplayState.DisplayingResults -> {
+                            DisplayState.DISPLAYING_RESULTS -> {
                                 Icon(
                                     imageVector = Icons.Rounded.Check,
                                     contentDescription = stringResource(id = R.string.apply),
@@ -123,7 +122,7 @@ fun VoiceToTextScreen(
                         }
                     }
                 }
-                if (state.displayState == DisplayState.DisplayingResults) {
+                if (state.displayState == DisplayState.DISPLAYING_RESULTS) {
                     IconButton(onClick = {
                         onEvent(VoiceToTextEvent.ToggleRecording(languageCode))
                     }) {
@@ -154,7 +153,7 @@ fun VoiceToTextScreen(
                         contentDescription = stringResource(id = R.string.close)
                     )
                 }
-                if (state.displayState == DisplayState.Speaking) {
+                if (state.displayState == DisplayState.SPEAKING) {
                     Text(
                         text = stringResource(id = R.string.listening),
                         color = LightBlue,
@@ -174,7 +173,7 @@ fun VoiceToTextScreen(
             ) {
                 AnimatedContent(targetState = state.displayState) { displayState ->
                     when (displayState) {
-                        DisplayState.WaitingToTalk -> {
+                        DisplayState.WAITING_TO_TALK -> {
                             Text(
                                 text = stringResource(id = R.string.start_talking),
                                 style = MaterialTheme.typography.h2,
@@ -182,7 +181,7 @@ fun VoiceToTextScreen(
                             )
                         }
 
-                        DisplayState.Speaking -> {
+                        DisplayState.SPEAKING -> {
                             VoiceRecorderDisplay(
                                 modifier = Modifier
                                     .fillMaxWidth()
@@ -191,7 +190,7 @@ fun VoiceToTextScreen(
                             )
                         }
 
-                        DisplayState.DisplayingResults -> {
+                        DisplayState.DISPLAYING_RESULTS -> {
                             Text(
                                 text = state.spokenText ?: "",
                                 style = MaterialTheme.typography.h2,
@@ -199,7 +198,7 @@ fun VoiceToTextScreen(
                             )
                         }
 
-                        DisplayState.Error -> Text(
+                        DisplayState.ERROR -> Text(
                             text = state.recordError ?: "Unknown error",
                             style = MaterialTheme.typography.h2,
                             textAlign = TextAlign.Center,
@@ -221,7 +220,7 @@ private fun VoiceToTextScreenPreview() {
         state = VoiceToTextState(
             powerRatios = (0..100).map { it / 100f },
             spokenText = "Hello World!",
-            displayState = DisplayState.WaitingToTalk,
+            displayState = DisplayState.WAITING_TO_TALK,
         ),
         languageCode = "en",
         onResult = {},
