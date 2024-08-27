@@ -15,6 +15,8 @@ android {
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
+
+        testInstrumentationRunner = "com.plcoding.translator_kmm.TestHiltRunner"
     }
     buildFeatures {
         compose = true
@@ -57,6 +59,7 @@ dependencies {
     androidTestImplementation(Deps.jUnit)
     androidTestImplementation(Deps.composeTesting)
     debugImplementation(Deps.composeTestManifest)
+    androidTestImplementation(Deps.rules)
 
     kaptAndroidTest(Deps.hiltAndroidCompiler)
     androidTestImplementation(Deps.hiltTesting)

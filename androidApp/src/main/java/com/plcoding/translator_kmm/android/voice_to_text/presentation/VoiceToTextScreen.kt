@@ -99,7 +99,7 @@ fun VoiceToTextScreen(
                             DisplayState.SPEAKING -> {
                                 Icon(
                                     imageVector = Icons.Rounded.Close,
-                                    contentDescription = stringResource(id = R.string.record_audio),
+                                    contentDescription = stringResource(id = R.string.stop_recording),
                                     modifier = Modifier.size(50.dp)
                                 )
                             }

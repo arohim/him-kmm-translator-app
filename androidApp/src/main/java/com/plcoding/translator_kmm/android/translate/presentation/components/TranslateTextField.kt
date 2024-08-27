@@ -191,7 +191,7 @@ private fun IdleTranslateTextField(
         }
         ProgressButton(
             text = stringResource(
-                id = com.plcoding.translator_kmm.android.R.string.translate
+                id = R.string.translate
             ),
             isLoading = isTranslating,
             onClick = onTranslateClick,
